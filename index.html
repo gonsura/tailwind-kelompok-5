@@ -82,19 +82,15 @@
   </footer>
 </body>
 <script>
-  const hamburger = document.getElementById('hamburger')
-  const navMenu = document.getElementById('nav-menu')
-  const bar1 = document.getElementById('bar1')
-  const bar2 = document.getElementById('bar2')
-  const bar3 = document.getElementById('bar3')
-  hamburger.addEventListener('click', () => {
-    console.log('hamburger clicked')
-    navMenu.classList.toggle('hidden')
-    navMenu.classList.toggle('flex')
-    bar1.classList.toggle('rotate-45')
-    bar2.classList.toggle('opacity-0')
-    bar3.classList.toggle('-translate-y-5')
-    bar3.classList.toggle('-rotate-45')
+  const sId = (e) => document.getElementById(e)
+
+  sId('hamburger').addEventListener('click', () => {
+    sId('nav-menu').classList.toggle('hidden')
+    sId('nav-menu').classList.toggle('flex')
+    sId('bar1').classList.toggle('rotate-45')
+    sId('bar2').classList.toggle('opacity-0')
+    sId('bar3').classList.toggle('-translate-y-5')
+    sId('bar3').classList.toggle('-rotate-45')
     document.body.classList.toggle('overflow-hidden')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   })
