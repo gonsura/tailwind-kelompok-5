@@ -1,11 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-    
+
+<body class="font-sans m-w-[1200px]">
+  <nav class="flex p-3 justify-between items-center relative md:static">
+    <h4 class="text-2xl font-bold"><a href="#">Finetec<span class="text-yellow-400">.</a></span></h4>
+    <div id="nav-menu"
+      class="hidden w-full md:flex md:justify-end flex-col md:flex-row justify-between h-[100vh] md:h-auto items-center fixed md:static top-0 left-0 bg-white md:bg-transparent z-10">
+      <ul
+        class="items-center flex md:justify-around pt-[50px] md:pt-0 h-[70vh] md:h-auto justify-between md:w-3/6 w-full font-bold flex-col md:flex-row">
+        <li><a href="#">platform</a></li>
+        <li><a href="#">company</a></li>
+        <li><a href="#">industries</a></li>
+        <li><a href="#">resource</a></li>
+      </ul>
+      <div
+        class="flex md:w-2/6 w-[300px] md:justify-end justify-between flex-col md:mb-0 mb-5 md:flex-row h-[20vh] md:h-auto">
+        <button
+          class="font-bold rounded-full text-black border border-gray-700 hover:text-white active:text-white hover:bg-gray-500 active:bg-black px-3 py-1 md:mr-3">sign
+          in</button>
+        <button class="rounded-full bg-black hover:bg-gray-500 active:bg-gray-400 text-white px-3 py-1">sign up</button>
+      </div>
+    </div>
+    <div id="hamburger" class="space-y-2 md:hidden absolute md:static z-20 right-4 cursor-pointer">
+      <div id="bar1" class="w-6 h-0.5 bg-gray-600 transition-all duration-500 ease-in-out"></div>
+      <div id="bar2" class="w-6 h-0.5 bg-gray-600 transition-all duration-500 ease-in-out"></div>
+      <div id="bar3" class="w-6 h-0.5 bg-gray-600 transition-all duration-500 ease-in-out"></div>
+    </div>
+  </nav>
+  <header
+    class="md:p-10 sm:bg-opacity-50 flex justify-items-start bg-[url('./assets/teteh.webp')] w-full bg-right-top bg-cover h-[92vh]">
+    <div class="pl-6 pt-2 w-[300px] lg:w-3/6 flex flex-col">
+      <h1 class="opacity-60 sm:opacity-100 text-5xl lg:text-6xl font-bold">All banks are worried about fintech ind.</h1>
+      <p class="mt-5 font-light opacity-70">we help you get paid any you want, with the least amount of hassle
+        it's just one of the reasons we are the
+        most trusted name.</p>
+      <div class="my-7 w-full">
+        <input type="email" class="lg:w-4/6 py-2.5 px-[20px] border-2 rounded-full border-gray-400"
+          placeholder="bussiness email" aria-label="email">
+        <button type="button"
+          class="font-semibold py-2.5 px-1 bg-yellow-400 rounded-full ml-[-94px] opacity-90 active:bg-yellow-600 active:outline">
+          get started</button>
+      </div>
+
+    </div>
+  </header>
+  <section class="p-20 flex items-center justify-center gap-x-20 flex-wrap">
+    <div class="flex flex-col justify-between w-[150px] h-auto items-center mb-7">
+      <div class="mb-5">
+        <i class="bi bi-credit-card-2-back-fill text-6xl opacity-50"></i>
+      </div>
+      <p class="opacity-70 font-semibold text-center">Improved collection performance</p>
+    </div>
+    <div class="flex flex-col justify-between w-[150px] h-auto items-center mb-7">
+      <div class="mb-5">
+        <i class="bi bi-wallet2 text-6xl opacity-50"></i>
+      </div>
+      <p class="opacity-70 font-semibold text-center">Convenient, local payment options</p>
+    </div>
+    <div class="flex flex-col justify-between w-[150px] h-auto items-center mb-7">
+      <div class="mb-5">
+        <i class="bi bi-currency-exchange text-6xl opacity-50"></i>
+      </div>
+      <p class="opacity-70 font-semibold text-center">The best price guarantee</p>
+    </div>
+  </section>
+  <footer class="flex justify-center">
+    <ul class="flex justify-around w-2/6 my-4">
+      <li><a href="#"><i class="bi bi-facebook text-2xl text-blue-600"></i></a></li>
+      <li><a href="#"><i class="bi bi-instagram text-2xl text-fuchsia-600"></i></a></li>
+      <li><a href="#"><i class="bi bi-linkedin text-2xl text-blue-500"></i></a></li>
+    </ul>
+  </footer>
 </body>
+<script>
+  const hamburger = document.getElementById('hamburger')
+  const navMenu = document.getElementById('nav-menu')
+  const bar1 = document.getElementById('bar1')
+  const bar2 = document.getElementById('bar2')
+  const bar3 = document.getElementById('bar3')
+  hamburger.addEventListener('click', () => {
+    console.log('hamburger clicked')
+    navMenu.classList.toggle('hidden')
+    navMenu.classList.toggle('flex')
+    bar1.classList.toggle('rotate-45')
+    bar2.classList.toggle('opacity-0')
+    bar3.classList.toggle('-translate-y-5')
+    bar3.classList.toggle('-rotate-45')
+    document.body.classList.toggle('overflow-hidden')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
+</script>
+
 </html>
